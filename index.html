@@ -4,9 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta.25/shoelace.css" 
+  integrity="sha512-3ye+ML/hPQKR80gFl/Jntss/+da98v7ArY3oOyFvEiNHb4q84PHsirRJO5pNXLFIk3Udn0iqiFzDwAu4L/IyUQ==" crossorigin="anonymous" />
+  <script src="main.js" defer></script>
   <title>Notes</title>
 </head>
-<body>
-  
+<body class="mar-md">
+  <header>Notes</header>
+  <form id="note-form" class="form">
+    <div class="input-field">
+      <label for="notes-input"></label>
+      <input type="text" id="notes-input">
+    </div>
+    <div class="input-field">
+      <label for="notes-input"></label>
+      <textarea id="text-input" cols="30" rows="15"></textarea>
+    </div>
+    <div class="input-field">
+      <button type="submit" class="button-lg">Add a Note</button>
+    </div>
+  </form>
+  <section class="notes-list"></section>
 </body>
 </html>
