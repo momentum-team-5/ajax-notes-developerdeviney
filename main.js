@@ -1,5 +1,6 @@
-/* globals fetch */
+/* globals fetch moment */
 const url = 'http://localhost:3000/notes'
+
 
 document.addEventListener('submit', function (event) {
     event.preventDefault()
@@ -9,27 +10,23 @@ document.addEventListener('submit', function (event) {
     fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify ({ notesInput })
-    })
-})   
+        body: JSON.stringify ({ notesItem: notesInput, created_at: moment().format() })
+})  
     .then(res => res.json())
     .then(data => {
-    const notesList = document.querySelector('.notes-list')
+    const notesList = document.querySelector('#notes-list')
     const notesItemEl = document.createElement('li')
     notesItemEl.innerText = data.notesItem
     notesList.appendChild(notesItemEl)
     })  
-
+})
 fetch(url)
 .then(res => res.json)
 .then(notesData => {
     const notesList = document.querySelector('#notes-list')
-    const notesEl = notesList.appendchild(document.createElement('ul'))
-    
     for (const item of notesData) {
-    console.log(item)
     const notesItemEl = document.createElement('li')
     notesItemEl.innerText = item.notesItem
-    notesEl.appendChild(notesItemEl)
+    notesList.appendChild(notesItemEl)
     }
-})
+})  
