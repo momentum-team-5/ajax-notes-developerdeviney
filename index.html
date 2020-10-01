@@ -9,27 +9,32 @@
       rel="stylesheet"
       href="https://cdn.shoelace.style/1.0.0-beta.25/shoelace.css"/>
   <link rel="stylesheet" 
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/regular.min.css" />
-    
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js"></script>
   <script src="main.js" defer></script>
   <title>Notes</title>
 </head>
+
 <body class="mar-md">
   <header>Notes</header>
-  <form id="note-form" class="form">
-    <div class="input-field">
-      <label for="notes-input"></label>
-      <input type="text" id="notes-input">
-    </div>
+    <form id="note-form" class="form">
+      <div class="input-field">
+        <label for="notes-input"></label>
+        <input type="text" id="notes-input">
+      </div>
+
     <div class="input-field">
       <label for="notes-input"></label>
       <textarea id="text-input" cols="30" rows="15"></textarea>
     </div>
+
     <div class="input-field">
       <button type="submit" class="button-lg">Add a Note</button>
     </div>
   </form>
+  
   <section>
     <ul id="notes-list"></ul>
   </section>
